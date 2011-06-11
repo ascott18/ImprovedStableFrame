@@ -1,0 +1,7 @@
+﻿## Interface: 40100
+## Title: Improved Stable Frame
+## Version: 1
+## Author: Cybeloras of Mal'Ganis
+## Notes: Condenses your stabled pets onto one page.
+
+ImprovedStableFrame.lua
