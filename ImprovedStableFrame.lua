@@ -10,10 +10,13 @@ for i = 11, 20 do
     end
 end
 
-for i = 2, 20 do
-    local frame = _G["PetStableStabledPet"..i]
-    frame:ClearAllPoints()
-    frame:SetPoint("LEFT", _G["PetStableStabledPet"..i-1], "RIGHT", 7, 0)
+for i = 1, 20 do
+	if i > 1 then
+		local frame = _G["PetStableStabledPet"..i]
+		frame:ClearAllPoints()
+		frame:SetPoint("LEFT", _G["PetStableStabledPet"..i-1], "RIGHT", 7, 0)
+	end
+	frame:SetFrameLevel(PetStableFrame:GetFrameLevel() + 1)
 end
 
 PetStableStabledPet1:ClearAllPoints()
