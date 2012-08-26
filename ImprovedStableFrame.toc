@@ -1,4 +1,5 @@
-﻿## Interface: 50001
+﻿## Interface: 40300
+## X-Compatible-With: 50001
 ## Title: Improved Stable Frame
 ## Version: 2.0
 ## Author: Cybeloras of Mal'Ganis
