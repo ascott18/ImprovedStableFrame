@@ -1,6 +1,6 @@
-﻿## Interface: 40300
+﻿## Interface: 50001
 ## Title: Improved Stable Frame
-## Version: 1.4
+## Version: 2.0
 ## Author: Cybeloras of Mal'Ganis
 ## Notes: Condenses your stabled pets onto one page.
 
