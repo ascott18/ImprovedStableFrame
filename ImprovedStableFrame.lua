@@ -11,8 +11,8 @@ for i = 11, 20 do
 end
 
 for i = 1, 20 do
+	local frame = _G["PetStableStabledPet"..i]
 	if i > 1 then
-		local frame = _G["PetStableStabledPet"..i]
 		frame:ClearAllPoints()
 		frame:SetPoint("LEFT", _G["PetStableStabledPet"..i-1], "RIGHT", 7, 0)
 	end
