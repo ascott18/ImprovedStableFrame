@@ -1,7 +1,7 @@
 ﻿
 -- --------------------------
 -- Improved Stable Frame
--- By Cybeloras of Mal'Ganis
+-- By Cybeloras of Detheroc/Mal'Ganis
 -- --------------------------
 
 for i = 11, 20 do 
