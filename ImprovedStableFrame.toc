@@ -1,5 +1,5 @@
-﻿## Interface: 50200
-## X-Compatible-With: 50300
+﻿## Interface: 50300
+# X-Compatible-With: 50300
 ## Title: Improved Stable Frame
 ## Version: 3.0
 ## Author: Cybeloras of Detheroc/Mal'Ganis
