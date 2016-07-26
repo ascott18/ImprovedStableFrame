@@ -1,7 +1,7 @@
-﻿## Interface: 60000
+﻿## Interface: 70000
 ## X-Compatible-With: 50300
 ## Title: Improved Stable Frame
-## Version: 3.1.1
+## Version: 3.1.2
 ## Author: Cybeloras of Detheroc/Mal'Ganis
 ## Notes: Condenses your stabled pets onto one page.
 
