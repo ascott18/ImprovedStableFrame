@@ -1,11 +1,15 @@
 ﻿
 local clientVersion = select(4, GetBuildInfo())
+local wow_800 = clientVersion >= 80000
 local wow_503 = clientVersion >= 50300
 
 local maxSlots = NUM_PET_STABLE_PAGES * NUM_PET_STABLE_SLOTS
 
 local NUM_PER_ROW, heightChange
-if wow_503 then
+if wow_800 then
+	NUM_PER_ROW = 10
+	heightChange = 65
+elseif wow_503 then
 	NUM_PER_ROW = 10
 	heightChange = 36
 else
