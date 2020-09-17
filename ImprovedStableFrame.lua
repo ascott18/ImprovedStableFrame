@@ -1,12 +1,15 @@
 ﻿
 local clientVersion = select(4, GetBuildInfo())
+local wow_900 = clientVersion >= 90000
 local wow_800 = clientVersion >= 80000
 local wow_503 = clientVersion >= 50300
 
 local maxSlots = NUM_PET_STABLE_PAGES * NUM_PET_STABLE_SLOTS
 
 local NUM_PER_ROW, heightChange
-if wow_800 then
+if wow_900 then
+	NUM_PER_ROW = 10
+elseif wow_800 then
 	NUM_PER_ROW = 10
 	heightChange = 65
 elseif wow_503 then
@@ -33,9 +36,6 @@ for i = 1, maxSlots do
 	frame:SetScale(7/NUM_PER_ROW)
 end
 
-PetStableStabledPet1:ClearAllPoints()
-PetStableStabledPet1:SetPoint("TOPLEFT", PetStableBottomInset, 9, -9)
-
 for i = NUM_PER_ROW+1, maxSlots, NUM_PER_ROW do
 	_G["PetStableStabledPet"..i]:ClearAllPoints()
 	_G["PetStableStabledPet"..i]:SetPoint("TOPLEFT", _G["PetStableStabledPet"..i-NUM_PER_ROW], "BOTTOMLEFT", 0, -5)
@@ -44,14 +44,38 @@ end
 PetStableNextPageButton:Hide()
 PetStablePrevPageButton:Hide()
 
+if wow_900 then
+	local widthDelta = 315
+	local heightDelta = 184
+	local f = CreateFrame("Frame", "ImprovedStableFrameSlots", PetStableFrame, "InsetFrameTemplate")
+	f:ClearAllPoints()
+	f:SetSize(widthDelta, PetStableFrame:GetHeight() + heightDelta - 28)
+	-- f:SetPoint("BOTTOMRIGHT", _G["PetStableStabledPet"..maxSlots], 5, -5)
 
-PetStableFrameModelBg:SetHeight(281 - heightChange)
-PetStableFrameModelBg:SetTexCoord(0.16406250, 0.77734375, 0.00195313, 0.55078125 - heightChange/512)
+	f:SetPoint(PetStableFrame.Inset:GetPoint(1))
+	PetStableFrame.Inset:SetPoint("TOPLEFT", f, "TOPRIGHT")
+	PetStableFrame:SetWidth(PetStableFrame:GetWidth() + widthDelta)
+	PetStableFrame:SetHeight(PetStableFrame:GetHeight() + heightDelta)
 
-PetStableFrameInset:SetPoint("BOTTOMRIGHT", PetStableFrame, "BOTTOMRIGHT", -6, 126 + heightChange)
+	PetStableFrameModelBg:SetHeight(281 + heightDelta)
 
-PetStableFrameStableBg:SetHeight(116 + heightChange)
+	local p, r, rp, x, y = PetStableModel:GetPoint(1)
+	PetStableModel:SetPoint(p, r, rp, x, y - 32)
 
+	PetStableStabledPet1:ClearAllPoints()
+	PetStableStabledPet1:SetPoint("TOPLEFT", f, 8, -8)
+else
+
+	PetStableStabledPet1:ClearAllPoints()
+	PetStableStabledPet1:SetPoint("TOPLEFT", PetStableBottomInset, 9, -9)
+
+	PetStableFrameModelBg:SetHeight(281 - heightChange)
+	PetStableFrameModelBg:SetTexCoord(0.16406250, 0.77734375, 0.00195313, 0.55078125 - heightChange/512)
+
+	PetStableFrameInset:SetPoint("BOTTOMRIGHT", PetStableFrame, "BOTTOMRIGHT", -6, 126 + heightChange)
+
+	PetStableFrameStableBg:SetHeight(116 + heightChange)
+end
 
 
 NUM_PET_STABLE_SLOTS = maxSlots
