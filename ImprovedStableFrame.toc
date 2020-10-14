@@ -1,4 +1,4 @@
-﻿## Interface: 80000
+﻿## Interface: 90000
 ## X-Compatible-With: 50300
 ## Title: Improved Stable Frame
 ## Version: 3.4.0
