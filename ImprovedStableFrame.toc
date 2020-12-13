@@ -1,7 +1,6 @@
-﻿## Interface: 90001
-## X-Compatible-With: 50300
+﻿## Interface: 90002
 ## Title: Improved Stable Frame
-## Version: 3.4.1
+## Version: 9.0.0
 ## Author: Cybeloras of Aerie Peak
 ## Notes: Condenses your stabled pets onto one page.
 
