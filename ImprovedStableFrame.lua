@@ -99,8 +99,8 @@ if wow_900 then
 
 	PetStableFrameModelBg:SetHeight(281 + heightDelta)
 
-	local p, r, rp, x, y = PetStableModel:GetPoint(1)
-	PetStableModel:SetPoint(p, r, rp, x, y - 32)
+	local p, r, rp, x, y = PetStableModelScene:GetPoint(1)
+	PetStableModelScene:SetPoint(p, r, rp, x, y - 32)
 
 	PetStableStabledPet1:ClearAllPoints()
 	PetStableStabledPet1:SetPoint("TOPLEFT", f, 8, -36)
